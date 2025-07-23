@@ -1,6 +1,8 @@
+'use client';
+
 import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
-import SectorCard from '../components/SectorCard';
+import { useLanguage } from '../../contexts/LanguageContext';
+import SectorCard from '../../components/SectorCard';
 import { Zap, Lightbulb, Building, Shirt, Coffee, Car, Settings, FlaskRound as Flask, Package, Wrench } from 'lucide-react';
 
 const Products: React.FC = () => {

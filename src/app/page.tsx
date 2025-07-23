@@ -1,13 +1,27 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import SectorCard from '../components/SectorCard';
 import CustomerSlider from '../components/CustomerSlider';
 import { Zap, Lightbulb, Building, Shirt, Coffee, Car, Settings, FlaskRound as Flask, Package, Wrench } from 'lucide-react';
 
+const heroImages = [
+  'https://images.pexels.com/photos/906494/pexels-photo-906494.jpeg',
+  'https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg',
+  'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg'
+];
+
 const Home: React.FC = () => {
   const { t } = useLanguage();
+
+  const [currentImage, setCurrentImage] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 4000); // 4 saniyede bir değişir
+    return () => clearInterval(interval);
+  }, []);
 
   const sectors = [
     {
@@ -113,7 +127,10 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/906494/pexels-photo-906494.jpeg')] bg-cover bg-center opacity-20" />
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20 transition-all duration-1000"
+          style={{ backgroundImage: `url(${heroImages[currentImage]})` }}
+        />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="text-center space-y-8">
