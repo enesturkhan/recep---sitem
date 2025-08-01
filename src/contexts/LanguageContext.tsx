@@ -68,7 +68,7 @@ const translations = {
     keyFeatures: 'Temel Özellikler',
     interestedIn: 'İlgileniyorsunuz',
     requestQuote: 'Teklif İsteyin',
-    downloadCatalog: 'Katalog İndirin',
+    downloadCatalog: 'Kataloğa Git',
     
     // Common terms
     annualExport: 'Yıllık İhracat',
@@ -168,7 +168,7 @@ const translations = {
     keyFeatures: 'Key Features',
     interestedIn: 'Interested in',
     requestQuote: 'Request Quote',
-    downloadCatalog: 'Download Catalog',
+    downloadCatalog: 'Go to Catalog',
     
     // Common terms
     annualExport: 'Annual Export',
@@ -268,7 +268,7 @@ const translations = {
     keyFeatures: 'Características Clave',
     interestedIn: 'Interesado en',
     requestQuote: 'Solicitar Cotización',
-    downloadCatalog: 'Descargar Catálogo',
+    downloadCatalog: 'Ir al Catálogo',
     
     // Common terms
     annualExport: 'Exportación Anual',
@@ -368,7 +368,7 @@ const translations = {
     keyFeatures: 'Caratteristiche Principali',
     interestedIn: 'Interessato a',
     requestQuote: 'Richiedi Preventivo',
-    downloadCatalog: 'Scarica Catalogo',
+    downloadCatalog: 'Vai al Catalogo',
     
     // Common terms
     annualExport: 'Esportazione Annuale',

@@ -1,11 +1,19 @@
+"use client";
+
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
+import Link from 'next/link';
+import { useLanguage } from '../../../contexts/LanguageContext';
 import { ArrowLeft, Package, Truck, Globe, Award, CheckCircle, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const ProductDetail: React.FC = () => {
-  const { sector } = useParams<{ sector: string }>();
+interface PageProps {
+  params: Promise<{
+    sector: string;
+  }>;
+}
+
+const ProductDetail: React.FC<PageProps> = ({ params }) => {
+  const { sector } = React.use(params);
   const { t } = useLanguage();
 
   const productData: Record<string, any> = {
@@ -298,7 +306,7 @@ const ProductDetail: React.FC = () => {
       <div className="min-h-screen bg-gray-900 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-white mb-4">Product Not Found</h1>
-          <Link to="/products" className="text-blue-400 hover:text-blue-300">
+          <Link href="/products" className="text-blue-400 hover:text-blue-300">
             Return to Products
           </Link>
         </div>
@@ -317,7 +325,7 @@ const ProductDetail: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <Link
-              to="/products"
+              href="/products"
               className="inline-flex items-center space-x-2 text-gray-400 hover:text-white mb-8 transition-colors"
             >
               <ArrowLeft className="h-5 w-5" />
@@ -551,7 +559,7 @@ const ProductDetail: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/contact"
+                href="/contact"
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-300"
               >
                 {t('requestQuote')}
